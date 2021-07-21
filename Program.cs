@@ -13,7 +13,7 @@ namespace TikTakToe
         }
         public static char[] EmptyBoard()
         {
-            char[] board = new char[9] { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
+            char[] board = new char[9] { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
             return board;
         }
         public static void LetterSelection()
@@ -39,11 +39,19 @@ namespace TikTakToe
         public static void DisplayBoard(char[] board)
         {
             int i = 0;
-            while (i < 6)
+            while (i <9)
             {
-                Console.WriteLine(board[i] + "  |" + board[i + 1] + "  |" + board[i + 2]);
-                Console.WriteLine("---|---|---");
-                i = i + 2;
+                if (i != 6)
+                {
+                    Console.WriteLine(board[i] + "  |" + board[i + 1] + "  |" + board[i + 2]);
+                    Console.WriteLine("---|---|---");
+                    i = i + 3;
+                }
+                else
+                {
+                    Console.WriteLine(board[i] + "  |" + board[i + 1] + "  |" + board[i + 2]);
+                    i = i + 3;
+                }
             }
         }
     }
