@@ -6,7 +6,11 @@ namespace TikTakToe
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to TikTakToe");
+            EmptyBoard();
+        }
+        public static void EmptyBoard()
+        {
+            char[] board = new char[10] { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
         }
     }
 }
