@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TikTakToe
 {
@@ -6,12 +7,14 @@ namespace TikTakToe
     {
         static void Main(string[] args)
         {
-            //EmptyBoard();
-            LetterSelection();
+            DisplayBoard(EmptyBoard());
+            //LetterSelection();
+
         }
-        public static void EmptyBoard()
+        public static char[] EmptyBoard()
         {
-            char[] board = new char[10] { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
+            char[] board = new char[9] { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
+            return board;
         }
         public static void LetterSelection()
         {
@@ -31,6 +34,16 @@ namespace TikTakToe
             else
             {
                 computer = 'X';
+            }
+        }
+        public static void DisplayBoard(char[] board)
+        {
+            int i = 0;
+            while (i < 6)
+            {
+                Console.WriteLine(board[i] + "  |" + board[i + 1] + "  |" + board[i + 2]);
+                Console.WriteLine("---|---|---");
+                i = i + 2;
             }
         }
     }
